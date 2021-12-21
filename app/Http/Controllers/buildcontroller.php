@@ -7,18 +7,12 @@ use phpDocumentor\Reflection\Types\Nullable;
 
 class buildcontroller extends Controller
 {
-    
-    public function build1(){
-        $message = ['text' => '建物です'];
-        return view('building', $message);
-    }
-    public function build2($room){
-        // if (!isset($room)){
-        //     $message = ['text' => '建物です'];
-        //     return view('building', $message);
-        // }else {
+    public function build($room=null){
+        if (!isset($room)){
+            $message = ['text' => '建物です'];
+        }else {
             $message= ['text'=>'部屋番号は' . $room . 'です'];
-            return view('building', $message);
-        // }
+        }
+        return view('building', $message);
     }
 }
