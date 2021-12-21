@@ -15,4 +15,7 @@ class buildcontroller extends Controller
         }
         return view('building', $message);
     }
+    public function index(){
+        return redirect('building');
+    }
 }
